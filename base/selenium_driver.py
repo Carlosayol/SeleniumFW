@@ -17,9 +17,9 @@ class SeleniumDriver():
             return By.XPATH
         elif locatorType == "css":
             return By.CSS_SELECTOR
-        elif locatorType == "classname":
+        elif locatorType == "class":
             return By.CLASS_NAME
-        elif locatorType == "linktext":
+        elif locatorType == "link":
             return By.LINK_TEXT
         elif locatorType == "name":
             return By.NAME
@@ -38,13 +38,22 @@ class SeleniumDriver():
             print("Element not found")
         return element
 
-    def ElementClick(self, locator, locatorType="id"):
+    def elementClick(self, locator, locatorType="id"):
         try:
             element = self.getElement(locator, locatorType)
             element.click()
             print("Element has been clicked")
         except:
             print("Cannot click the element")
+            print_stack()
+
+    def sendElementKeys(self, locator, data,locatorType="id"):
+        try:
+            element = self.getElement(locator, locatorType)
+            element.send_keys(data)
+            print("Keys has been send")
+        except:
+            print("Cannot send keys")
             print_stack()
 
     def isElementPresent(self, locator, byType):
