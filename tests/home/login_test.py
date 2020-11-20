@@ -7,7 +7,7 @@ class LoginTest(unittest.TestCase):
 
     def test_validLogin(self):
         baseUrl = "https://courses.letskodeit.com"
-        driver = webdriver.Chrome(executable_path="../../chromedriver.exe")
+        driver = webdriver.Chrome()
         driver.maximize_window()
         driver.get(baseUrl)
         driver.implicitly_wait(3)
