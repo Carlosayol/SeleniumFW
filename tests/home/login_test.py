@@ -1,27 +1,33 @@
 from selenium import webdriver
-from selenium.webdriver.common.by import By
+import pytest
 from pages.home.login_page import LoginPage
 import unittest
+import time
 
 class LoginTest(unittest.TestCase):
+    baseUrl = "https://courses.letskodeit.com"
+    driver = webdriver.Chrome()
+    driver.maximize_window()
+    driver.get(baseUrl)
+    driver.implicitly_wait(3)
+    lp = LoginPage(driver)
 
+    @pytest.mark.run(order=2)
     def test_validLogin(self):
-        baseUrl = "https://courses.letskodeit.com"
-        driver = webdriver.Chrome()
-        driver.maximize_window()
-        driver.get(baseUrl)
-        driver.implicitly_wait(3)
+        self.lp.login()
+        result = self.lp.verifyCorrectLogin()
 
-        lp = LoginPage(driver)
-        lp.login()
+        assert result == True
+        self.driver.quit()
 
-        searchBar = driver.find_element(By.XPATH,"//input[@id='search']")
-        if searchBar is not None:
-            print("Se ha ingresado correctamente")
-        else:
-            print("Error en el ingreso")
+    @pytest.mark.run(order=1)
+    def test_invalidLogin(self):
+        self.driver.get(self.baseUrl)
+        self.lp.login(username="test@hotmail.com",password="aassss")
 
-ff = LoginTest()
-ff.test_validLogin()
+        result = self.lp.verifyFailedLogin()
+
+        assert result == True
+
 
 

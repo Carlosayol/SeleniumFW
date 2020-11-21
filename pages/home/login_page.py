@@ -1,6 +1,6 @@
 from selenium.webdriver.common.by import By
 from base.selenium_driver import SeleniumDriver
-
+import time
 
 class LoginPage(SeleniumDriver):
 
@@ -47,4 +47,15 @@ class LoginPage(SeleniumDriver):
         self.clickLoginLink()
         self.enterEmail(username)
         self.enterPassword(password)
+        time.sleep(3)
         self.clickLoginButton()
+
+
+    def verifyCorrectLogin(self):
+        result = self.isElementPresent("//input[@id='search']",locatorType="XPATH")
+        return result
+
+    def verifyFailedLogin(self):
+        result = self.isElementPresent("//span[contains(text(),'Your username or password is invalid. Please try again')]",
+                                       locatorType="xpath")
+        return result
