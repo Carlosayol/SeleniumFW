@@ -1,4 +1,5 @@
 from selenium import webdriver
+from base.webdriverfactor import WebDriverFactor
 import pytest
 
 #Function level
@@ -12,15 +13,9 @@ def setUp():
 @pytest.fixture(scope="class")
 def ModulesetUp(request, browser, osType):
     print("Running module level setup")
-    if browser=="chrome":
-        baseUrl = "https://courses.letskodeit.com"
-        driver = webdriver.Chrome()
-        driver.maximize_window()
-        driver.implicitly_wait(3)
-        driver.get(baseUrl)
-        print("Running test on Chrome")
-    else:
-        print("Running test on Mew")
+    wdf = WebDriverFactor(browser)
+    driver = wdf.getWebDriverInstance()
+
     if request.cls is not None:
         request.cls.driver = driver
 
