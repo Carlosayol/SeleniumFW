@@ -59,3 +59,10 @@ class LoginPage(SeleniumDriver):
         result = self.isElementPresent("//span[contains(text(),'Your username or password is invalid. Please try again')]",
                                        locatorType="xpath")
         return result
+
+    def verifyTitle(self):
+        print("Pruebass: ",self.getTitle())
+        if "All Courses" in self.getTitle():
+            return True
+        else:
+            return False
