@@ -60,7 +60,7 @@ class LoginPage(SeleniumDriver):
                                        locatorType="xpath")
         return result
 
-    def verifyTitle(self):
+    def verifyLoginTitle(self):
         print("Pruebass: ",self.getTitle())
         if "All Courses" in self.getTitle():
             return True

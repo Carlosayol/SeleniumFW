@@ -18,9 +18,11 @@ class TestStatus(SeleniumDriver):
                 else:
                     self.resultList.append("FAIL")
                     self.log.error("### VERIFICATION FAILED :: + " + resultMessage)
+                    self.screenShot(resultMessage)
             else:
                 self.resultList.append("FAIL")
                 self.log.error("### VERIFICATION FAILED :: + " + resultMessage)
+                self.screenShot(resultMessage)
         except:
             self.resultList.append("FAIL")
             self.log.error("### EXCEPTION FAIL ")
