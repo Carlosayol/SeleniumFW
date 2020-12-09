@@ -1,5 +1,6 @@
 import pytest
 from pages.home.login_page import LoginPage
+from utilities.teststatus import TestStatus
 import unittest
 
 
@@ -10,6 +11,7 @@ class LoginTest(unittest.TestCase):
     @pytest.fixture(autouse=True)
     def classSetup(self, ModulesetUp):
         self.lp = LoginPage(self.driver)
+        self.ts = TestStatus(self.driver)
 
     # 2 test cases
     # result2 verify the title
@@ -18,16 +20,13 @@ class LoginTest(unittest.TestCase):
     def test_validLogin(self):
         self.lp.login()
         result2 = self.lp.verifyTitle()
-        assert result2 == True
-
+        self.ts.mark(result2, "Title is incorrect")
         result1 = self.lp.verifyCorrectLogin()
-        assert result1 == True
+        self.ts.markFinal("test_validLogin",result1,"Login failed")
 
 
     @pytest.mark.run(order=1)
     def test_invalidLogin(self):
         self.lp.login(username="test@hotmail.com", password="aassss")
         result = self.lp.verifyFailedLogin()
-        assert result == True
-
-    # New test class
+        self.ts.markFinal("test_invalidLogin",result,"Login succesful")

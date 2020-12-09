@@ -192,3 +192,28 @@
 12/08/2020 10:35:31: INFO: Keys has been send at Line 62
 12/08/2020 10:35:34: INFO: Element found at Line 44
 12/08/2020 10:35:37: INFO: Element has been clicked at Line 53
+12/08/2020 11:01:14: INFO: Element found at Line 44
+12/08/2020 11:01:15: INFO: Element has been clicked at Line 53
+12/08/2020 11:01:15: INFO: Element found at Line 44
+12/08/2020 11:01:15: INFO: Keys has been send at Line 62
+12/08/2020 11:01:15: INFO: Element found at Line 44
+12/08/2020 11:01:15: INFO: Keys has been send at Line 62
+12/08/2020 11:01:18: INFO: Element found at Line 44
+12/08/2020 11:01:20: INFO: Element has been clicked at Line 53
+12/08/2020 11:01:20: INFO: Element found at Line 44
+12/08/2020 11:01:20: INFO: Element found at Line 71
+12/08/2020 11:01:20: INFO: ### VERIFICATION SUCCESSFUL :: + Login succesful at Line 17
+12/08/2020 11:01:20: INFO: test_invalidLogin ### TEST SUCCESSFUL at Line 40
+12/08/2020 11:01:20: INFO: Element found at Line 44
+12/08/2020 11:01:21: INFO: Element has been clicked at Line 53
+12/08/2020 11:01:21: INFO: Element found at Line 44
+12/08/2020 11:01:21: INFO: Keys has been send at Line 62
+12/08/2020 11:01:21: INFO: Element found at Line 44
+12/08/2020 11:01:21: INFO: Keys has been send at Line 62
+12/08/2020 11:01:24: INFO: Element found at Line 44
+12/08/2020 11:01:27: INFO: Element has been clicked at Line 53
+12/08/2020 11:01:27: INFO: ### VERIFICATION SUCCESSFUL :: + Title is incorrect at Line 17
+12/08/2020 11:01:27: INFO: Element found at Line 44
+12/08/2020 11:01:27: INFO: Element found at Line 71
+12/08/2020 11:01:27: INFO: ### VERIFICATION SUCCESSFUL :: + Login failed at Line 17
+12/08/2020 11:01:27: INFO: test_validLogin ### TEST SUCCESSFUL at Line 40

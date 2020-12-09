@@ -1,9 +1,4 @@
 from base.selenium_driver import SeleniumDriver
-from selenium.webdriver.common.by import By
-from traceback import print_stack
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.common.exceptions import *
 import logging
 import utilities.customlogger as cl
 
@@ -22,18 +17,27 @@ class TestStatus(SeleniumDriver):
                     self.log.info("### VERIFICATION SUCCESSFUL :: + " + resultMessage)
                 else:
                     self.resultList.append("FAIL")
-                    self.log.info("### VERIFICATION FAILED :: + " + resultMessage)
+                    self.log.error("### VERIFICATION FAILED :: + " + resultMessage)
             else:
                 self.resultList.append("FAIL")
-                self.log.info("### VERIFICATION FAILED :: + " + resultMessage)
+                self.log.error("### VERIFICATION FAILED :: + " + resultMessage)
         except:
             self.resultList.append("FAIL")
-            self.log.info("### EXCEPTION FAIL ")
+            self.log.error("### EXCEPTION FAIL ")
 
 
     def mark(self, result, resultMessage):
         self.setResult(result, resultMessage)
 
     def markFinal(self, testName, result, resultMessage):
-        print()
+        self.setResult(result, resultMessage)
+
+        if "FAIL" in self.resultList:
+            self.log.error(testName + " ### TEST FAILED")
+            self.resultList.clear()
+            assert True == False
+        else:
+            self.log.info(testName + " ### TEST SUCCESSFUL")
+            self.resultList.clear()
+            assert True == True
 
