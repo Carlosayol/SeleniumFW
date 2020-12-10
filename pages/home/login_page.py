@@ -1,8 +1,8 @@
 from selenium.webdriver.common.by import By
-from base.selenium_driver import SeleniumDriver
+from base.base_page import BasePage
 import time
 
-class LoginPage(SeleniumDriver):
+class LoginPage(BasePage):
 
     def __init__(self, driver):
         super().__init__(driver)
@@ -61,8 +61,4 @@ class LoginPage(SeleniumDriver):
         return result
 
     def verifyLoginTitle(self):
-        print("Pruebass: ",self.getTitle())
-        if "All Courses" in self.getTitle():
-            return True
-        else:
-            return False
+        return self.verifyPageTitle("All Courses")

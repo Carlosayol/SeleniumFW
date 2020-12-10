@@ -217,3 +217,31 @@
 12/08/2020 11:01:27: INFO: Element found at Line 71
 12/08/2020 11:01:27: INFO: ### VERIFICATION SUCCESSFUL :: + Login failed at Line 17
 12/08/2020 11:01:27: INFO: test_validLogin ### TEST SUCCESSFUL at Line 40
+12/10/2020 10:46:29: INFO: Element found at Line 63
+12/10/2020 10:46:30: INFO: Element has been clicked at Line 72
+12/10/2020 10:46:30: INFO: Element found at Line 63
+12/10/2020 10:46:30: INFO: Keys has been send at Line 81
+12/10/2020 10:46:30: INFO: Element found at Line 63
+12/10/2020 10:46:30: INFO: Keys has been send at Line 81
+12/10/2020 10:46:33: INFO: Element found at Line 63
+12/10/2020 10:46:34: INFO: Element has been clicked at Line 72
+12/10/2020 10:46:34: INFO: Element found at Line 63
+12/10/2020 10:46:34: INFO: Element found at Line 90
+12/10/2020 10:46:34: INFO: ### VERIFICATION SUCCESSFUL :: + Login verification at Line 17
+12/10/2020 10:46:34: INFO: test_invalidLogin ### TEST SUCCESSFUL at Line 42
+12/10/2020 10:46:34: INFO: Element found at Line 63
+12/10/2020 10:46:35: INFO: Element has been clicked at Line 72
+12/10/2020 10:46:35: INFO: Element found at Line 63
+12/10/2020 10:46:35: INFO: Keys has been send at Line 81
+12/10/2020 10:46:35: INFO: Element found at Line 63
+12/10/2020 10:46:35: INFO: Keys has been send at Line 81
+12/10/2020 10:46:38: INFO: Element found at Line 63
+12/10/2020 10:46:43: INFO: Element has been clicked at Line 72
+12/10/2020 10:46:43: INFO: Actual text : All Courses at Line 21
+12/10/2020 10:46:43: INFO: Expected text : All Courses at Line 22
+12/10/2020 10:46:43: INFO: ### VERIFICATION CORRECT at Line 24
+12/10/2020 10:46:43: INFO: ### VERIFICATION SUCCESSFUL :: + Title verification at Line 17
+12/10/2020 10:46:43: INFO: Element found at Line 63
+12/10/2020 10:46:43: INFO: Element found at Line 90
+12/10/2020 10:46:43: INFO: ### VERIFICATION SUCCESSFUL :: + Login verification at Line 17
+12/10/2020 10:46:43: INFO: test_validLogin ### TEST SUCCESSFUL at Line 42
