@@ -1,5 +1,6 @@
 from selenium import webdriver
 from base.webdriverfactor import WebDriverFactor
+from pages.home.login_page import LoginPage
 import pytest
 
 #Function level
@@ -15,7 +16,8 @@ def ModulesetUp(request, browser, osType):
     print("Running module level setup")
     wdf = WebDriverFactor(browser)
     driver = wdf.getWebDriverInstance()
-
+    lp = LoginPage(driver)
+    lp.login("test@email.com","abcabc")
     if request.cls is not None:
         request.cls.driver = driver
 

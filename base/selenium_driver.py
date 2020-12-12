@@ -65,9 +65,22 @@ class SeleniumDriver():
             self.log.info("Element not found")
         return element
 
-    def elementClick(self, locator, locatorType="id"):
+    def getElementList(self, locator, locatorType="id"):
+        elements = None
         try:
-            element = self.getElement(locator, locatorType)
+            locatorType = locatorType.lower()
+            byType = self.getByType(locatorType)
+            elements = self.driver.find_elements(byType, locator)
+            self.log.info("Elements found")
+        except:
+            self.log.info("Elements not found")
+        return elements
+
+
+    def elementClick(self, locator="", locatorType="id", element=None):
+        try:
+            if locator: # Esto verifica si el locator no esta vacio
+                element = self.getElement(locator, locatorType)
             element.click()
             self.log.info("Element has been clicked")
         except:
@@ -82,6 +95,23 @@ class SeleniumDriver():
         except:
             self.log.info("Cannot send keys")
             print_stack()
+
+    def getText(self, locator="", locatorType="id", element= None ,info =""):
+        try:
+            if locator:
+                element = self.getElement(locator, locatorType)
+            text = element.text
+            if len(text) == 0:
+                text = element.get_attribute("innerText")
+            if len(text) != 0:
+                text = text.strip()
+            self.log.info("Text has been retrieved")
+        except:
+            self.log.error("Failed to get text on element")
+            print_stack()
+            text = None
+        return text
+
 
     def isElementPresent(self, locator, locatorType="id"):
         try:
@@ -107,7 +137,6 @@ class SeleniumDriver():
 
     def waitForElement(self, locator, locatorType="id",timeout=10,
                        pollFrequency=0.5):
-
         element = None
         try:
             byType = self.hw.getByType(locatorType)
@@ -122,3 +151,24 @@ class SeleniumDriver():
             self.log.info("No aparecio el elemento")
             print_stack()
         return element
+
+    def isElementDisplayed(self, locator="", locatorType="id", element=None):
+        isDisplayed = False
+        try:
+            if locator:
+                element = self.getElement(locator, locatorType)
+            if element is not None:
+                isDisplayed = element.is_displayed()
+                self.log.info("Element is displayed")
+            else:
+                self.log.info("Element is not displayed")
+            return isDisplayed
+        except:
+            self.log.info("No aparecio el elemento")
+            return False
+
+    def scrollBroswer(self, direction="up"):
+        if direction == "up":
+            self.driver.execute_script("window.scrollBy(0,-1000);")
+        if direction == "down":
+            self.driver.execute_script("window.scrollBy(0,1000);")
