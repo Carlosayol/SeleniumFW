@@ -172,3 +172,21 @@ class SeleniumDriver():
             self.driver.execute_script("window.scrollBy(0,-1000);")
         if direction == "down":
             self.driver.execute_script("window.scrollBy(0,1000);")
+
+    #Switch To Iframe Method
+
+    def switchToFrame(self, locatorIndex=0):
+        try:
+            self.driver.switch_to.frame(locatorIndex)
+            self.log.info("Frame has been switched")
+        except:
+            self.log.info("Cannot switch frame")
+            print_stack()
+
+    def switchToDefault(self):
+        try:
+            self.driver.switch_to.default_content()
+            self.log.info("Switched to default")
+        except:
+            self.log.info("Cannot revert to default")
+            print_stack()
