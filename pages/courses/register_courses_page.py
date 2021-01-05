@@ -12,6 +12,7 @@
 from base.base_page import BasePage
 import time
 
+
 class RegisterCoursesPage(BasePage):
 
     def __init__(self, driver):
@@ -20,22 +21,22 @@ class RegisterCoursesPage(BasePage):
 
     # Locators
 
-    _search_field = "search" # id
-    _search_button = "//button[@class='find-course search-course']" #xpath
-    _course_link = "//h4[contains(text(),'Learn Python 3 from scratch')]//parent::div//parent::a" #xpath
-    _enroll_link = "//button[contains(text(),'Enroll in Course')]" # xpath
-    _creditcard_field = "cardnumber" # name inside frame 1
-    _expdate_field = "exp-date" # name inside frame 2
-    _cvc_field = "cvc" # name inside frame 3
-    _submit_button = "//div[@class='stripe-outer ']//button" # xpath 3rd number
-    _enroll_error_message = "//span[contains(text(),'El número de tarjeta')]" # xpath
+    _search_field = "search"  # id
+    _search_button = "//button[@class='find-course search-course']"  # xpath
+    _course_link = "//h4[contains(text(),'Learn Python 3 from scratch')]//parent::div//parent::a"  # xpath
+    _enroll_link = "//button[contains(text(),'Enroll in Course')]"  # xpath
+    _creditcard_field = "cardnumber"  # name inside frame 1
+    _expdate_field = "exp-date"  # name inside frame 2
+    _cvc_field = "cvc"  # name inside frame 3
+    _submit_button = "//div[@class='stripe-outer ']//button"  # xpath 3rd number
+    _enroll_error_message = "//span[contains(text(),'El número de tarjeta')]"  # xpath
 
     # Methods
 
     def enterCourseName(self, course):
-        self.sendElementKeys(self._search_field, course)
+        self.sendElementKeys(self._search_field, course,locatorType="ID")
 
-    def searchCourse(self):
+    def clickSearchCourse(self):
         self.elementClick(self._search_button, locatorType="XPATH")
 
     # Selecting which course to enroll
@@ -64,16 +65,28 @@ class RegisterCoursesPage(BasePage):
     def clickSubmitButton(self):
         self.elementClick(self._submit_button, locatorType="XPATH")
 
-    ### Bigger Methods
+    ### Functionality
 
     def enterCreditCardInfo(self, num, exp, cvc):
-        self.enterCreditCard(self, num)
-        self.enterExpDateCard(self, exp)
-        self.enterCVCCard(self, cvc)
+        self.switchToFrame(1)
+        self.enterCreditCard(num)
+        self.switchToDefault()
+        self.switchToFrame(2)
+        self.enterExpDateCard(exp)
+        self.switchToDefault()
+        self.switchToFrame(3)
+        self.enterCVCCard(cvc)
+        self.switchToDefault()
 
-    def enrollCourse(self, num="", exp="", cvc=""):
-        self.clickEnrollButton(self)
-        self.scrollBroswer(self, direction="down")
-        self.enterCreditCardInfo(self, num, exp, cvc)
-        self.clickSubmitButton(self)
+    def enrollCourse(self, coursename="Learn Python 3 from scratch", num="", exp="", cvc=""):
+        self.enterCourseName(coursename)
+        self.clickSearchCourse()
+        self.selectCourseToEnroll()
+        self.clickEnrollButton()
+        self.scrollBroswer(direction="down")
+        self.enterCreditCardInfo(num, exp, cvc)
+        self.clickSubmitButton()
 
+    def verifyEnrollFailed(self):
+        result = self.isElementDisplayed(self._enroll_error_message, locatorType="XPATH")
+        return result
