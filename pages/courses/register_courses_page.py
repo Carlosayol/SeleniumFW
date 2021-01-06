@@ -26,8 +26,8 @@ class RegisterCoursesPage(BasePage):
     _course_link = "//h4[contains(text(),'Learn Python 3 from scratch')]//parent::div//parent::a"  # xpath
     _enroll_link = "//button[contains(text(),'Enroll in Course')]"  # xpath
     _creditcard_field = "cardnumber"  # name inside frame 1
-    _expdate_field = "exp-date"  # name inside frame 2
-    _cvc_field = "cvc"  # name inside frame 3
+    _expdate_field = "exp-date"  # name inside frame
+    _cvc_field = "cvc"  # name inside frame 2
     _submit_button = "//div[@class='stripe-outer ']//button"  # xpath 3rd number
     _enroll_error_message = "//span[contains(text(),'El número de tarjeta')]"  # xpath
 
@@ -63,7 +63,8 @@ class RegisterCoursesPage(BasePage):
     # Enroll with complete info
 
     def clickSubmitButton(self):
-        self.elementClick(self._submit_button, locatorType="XPATH")
+        buttons = self.getElementList(self._submit_button,locatorType="XPATH")
+        self.elementClick(element=buttons[2])
 
     ### Functionality
 
@@ -71,10 +72,10 @@ class RegisterCoursesPage(BasePage):
         self.switchToFrame(1)
         self.enterCreditCard(num)
         self.switchToDefault()
+        #self.switchToFrame(2)
+        #self.enterExpDateCard(exp)
+        #self.switchToDefault()
         self.switchToFrame(2)
-        self.enterExpDateCard(exp)
-        self.switchToDefault()
-        self.switchToFrame(3)
         self.enterCVCCard(cvc)
         self.switchToDefault()
 
@@ -88,5 +89,6 @@ class RegisterCoursesPage(BasePage):
         self.clickSubmitButton()
 
     def verifyEnrollFailed(self):
-        result = self.isElementDisplayed(self._enroll_error_message, locatorType="XPATH")
+        messageElement = self.waitForElement(self._enroll_error_message, locatorType="XPATH")
+        result = self.isElementDisplayed(element=messageElement)
         return result
