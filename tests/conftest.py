@@ -22,7 +22,7 @@ def ModulesetUp(request, browser, osType):
         request.cls.driver = driver
 
     yield driver
-    driver.quit()
+    #driver.quit()
     print("Running module level tear down")
 
 def pytest_addoption(parser):

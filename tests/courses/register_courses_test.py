@@ -1,11 +1,5 @@
-# Hacer cosas similares a lo que esta en la otra clase de tests
-# Usar fixtures
-# Crear 1 metodo que haga:
-#       ingresar nombre del curso
-#       seleccionarlo
-#       entrar al curso y aplicar al curso
-#       verificar el mensaje de error
-#       test status.markfinal
+
+# Comando tocho py.test -s -v test/courses/register_courses_test.py --browser chrome
 
 from pages.courses.register_courses_page import RegisterCoursesPage
 from utilities.teststatus import TestStatus
@@ -22,6 +16,6 @@ class RegisterCoursesTest(unittest.TestCase):
 
     @pytest.mark.run(order=1)
     def test_invalidEnroll(self):
-        self.courses.enrollCourse(num="1231 2311 1131 1114",exp="1224",cvc="111")
+        self.courses.enrollCourse(coursename="Learn Python 3 from scratch", num="1231 2311 1131 1114",exp="1224",cvc="111")
         result = self.courses.verifyEnrollFailed()
-        self.ts.markFinal("test invalid enroll",result,"Enroll verification")
+        self.ts.markFinal("test_invalidEnroll",result,"Enroll verification")

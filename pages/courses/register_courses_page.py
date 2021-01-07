@@ -21,7 +21,7 @@ class RegisterCoursesPage(BasePage):
 
     # Locators
 
-    _search_field = "search"  # id
+    _search_field = "//input[@id='search']"  # id
     _search_button = "//button[@class='find-course search-course']"  # xpath
     _course_link = "//h4[contains(text(),'Learn Python 3 from scratch')]//parent::div//parent::a"  # xpath
     _enroll_link = "//button[contains(text(),'Enroll in Course')]"  # xpath
@@ -29,12 +29,12 @@ class RegisterCoursesPage(BasePage):
     _expdate_field = "exp-date"  # name inside frame
     _cvc_field = "cvc"  # name inside frame 2
     _submit_button = "//div[@class='stripe-outer ']//button"  # xpath 3rd number
-    _enroll_error_message = "//span[contains(text(),'El número de tarjeta')]"  # xpath
+    _enroll_error_message = "//span[contains(text(),'El número de tu tarjeta')]"  # xpath
 
     # Methods
 
     def enterCourseName(self, course):
-        self.sendElementKeys(self._search_field, course,locatorType="ID")
+        self.sendElementKeys(self._search_field, course,locatorType="XPATH")
 
     def clickSearchCourse(self):
         self.elementClick(self._search_button, locatorType="XPATH")
@@ -69,12 +69,12 @@ class RegisterCoursesPage(BasePage):
     ### Functionality
 
     def enterCreditCardInfo(self, num, exp, cvc):
-        self.switchToFrame(1)
+        self.switchToFrame(0)
         self.enterCreditCard(num)
         self.switchToDefault()
-        #self.switchToFrame(2)
-        #self.enterExpDateCard(exp)
-        #self.switchToDefault()
+        self.switchToFrame(1)
+        self.enterExpDateCard(exp)
+        self.switchToDefault()
         self.switchToFrame(2)
         self.enterCVCCard(cvc)
         self.switchToDefault()

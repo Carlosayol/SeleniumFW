@@ -60,9 +60,11 @@ class SeleniumDriver():
             locatorType = locatorType.lower()
             byType = self.getByType(locatorType)
             element = self.driver.find_element(byType, locator)
-            self.log.info("Element found")
+            self.log.info("Element found with locator: " + locator +
+                          " locatorType: " + locatorType)
         except:
-            self.log.info("Element not found")
+            self.log.info("Element not found with locator: " + locator +
+                          " locatorType: " + locatorType)
         return element
 
     def getElementList(self, locator, locatorType="id"):
@@ -71,9 +73,11 @@ class SeleniumDriver():
             locatorType = locatorType.lower()
             byType = self.getByType(locatorType)
             elements = self.driver.find_elements(byType, locator)
-            self.log.info("Elements found")
+            self.log.info("Elements found with locator: " + locator +
+                          " locatorType: " + locatorType)
         except:
-            self.log.info("Elements not found")
+            self.log.info("Elements not found with locator: " + locator +
+                          " locatorType: " + locatorType)
         return elements
 
 
@@ -82,18 +86,22 @@ class SeleniumDriver():
             if locator: # Esto verifica si el locator no esta vacio
                 element = self.getElement(locator, locatorType)
             element.click()
-            self.log.info("Element has been clicked")
+            self.log.info("Element has been clicked with locator: " + locator +
+                          " locatorType: " + locatorType)
         except:
-            self.log.info("Cannot click the element")
+            self.log.info("Cannot click the element with locator: " + locator +
+                          " locatorType: " + locatorType)
             print_stack()
 
     def sendElementKeys(self, locator, data,locatorType="id"):
         try:
             element = self.getElement(locator, locatorType)
             element.send_keys(data)
-            self.log.info("Keys has been send")
+            self.log.info("Keys has been send with locator: " + locator +
+                          " locatorType: " + locatorType)
         except:
-            self.log.info("Cannot send keys")
+            self.log.info("Cannot send keys with locator: " + locator +
+                          " locatorType: " + locatorType)
             print_stack()
 
     def getText(self, locator="", locatorType="id", element= None ,info =""):
@@ -117,11 +125,13 @@ class SeleniumDriver():
         try:
             element = self.getElement(locator,locatorType)
             if element is not None:
-                self.log.info("Element found")
+                self.log.info("Element found with locator: " + locator +
+                          " locatorType: " + locatorType)
                 return True
             else: return False
         except:
-            self.log.info("Element not found")
+            self.log.info("Element not found with locator: " + locator +
+                          " locatorType: " + locatorType)
             return False
 
     def ElementsPresent(self, locator, byType):
@@ -146,9 +156,11 @@ class SeleniumDriver():
                                                      ElementNotSelectableException])
             element = wait.until(EC.element_to_be_clickable((byType, locator)))
             element.click()
-            self.log.info("Elemento aparecio en la web")
+            self.log.info("Element appeared with locator: " + locator +
+                          " locatorType: " + locatorType)
         except:
-            self.log.info("No aparecio el elemento")
+            self.log.info("Element didn't appear with locator: " + locator +
+                          " locatorType: " + locatorType)
             print_stack()
         return element
 
@@ -159,9 +171,11 @@ class SeleniumDriver():
                 element = self.getElement(locator, locatorType)
             if element is not None:
                 isDisplayed = element.is_displayed()
-                self.log.info("Element is displayed")
+                self.log.info("Element is displayed with locator: " + locator +
+                          " locatorType: " + locatorType)
             else:
-                self.log.info("Element is not displayed")
+                self.log.info("Element is not displayed with locator: " + locator +
+                          " locatorType: " + locatorType)
             return isDisplayed
         except:
             self.log.info("No aparecio el elemento")
