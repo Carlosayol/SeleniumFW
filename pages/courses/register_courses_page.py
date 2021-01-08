@@ -89,6 +89,6 @@ class RegisterCoursesPage(BasePage):
         self.clickSubmitButton()
 
     def verifyEnrollFailed(self):
-        messageElement = self.waitForElement(self._enroll_error_message, locatorType="XPATH")
-        result = self.isElementDisplayed(element=messageElement)
+        time.sleep(4)
+        result = self.isElementDisplayed(self._enroll_error_message, locatorType="XPATH")
         return result
