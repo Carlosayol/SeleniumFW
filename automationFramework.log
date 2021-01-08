@@ -130,3 +130,97 @@ TH at Line 89
 01/08/2021 10:21:55 - SeleniumDriver - INFO: Element is displayed with locator: //span[contains(text(),'El número de tu tarjeta')] locatorType: XPATH at Line 174
 01/08/2021 10:21:55 - TestStatus - INFO: ### VERIFICATION SUCCESSFUL :: + Enroll verification at Line 17
 01/08/2021 10:21:55 - TestStatus - INFO: test_invalidEnroll ### TEST SUCCESSFUL at Line 42
+01/08/2021 10:38:43 - SeleniumDriver - INFO: Element found with locator: //a[contains(text(),'Sign In')] locatorType: xpath at Line 63
+01/08/2021 10:38:43 - SeleniumDriver - INFO: Element has been clicked with locator: //a[contains(text(),'Sign In')] locatorType: XPATH at Line 89
+01/08/2021 10:38:43 - SeleniumDriver - INFO: Element found with locator: email locatorType: id at Line 63
+01/08/2021 10:38:44 - SeleniumDriver - INFO: Keys has been send with locator: email locatorType: id at Line 100
+01/08/2021 10:38:44 - SeleniumDriver - INFO: Element found with locator: password locatorType: id at Line 63
+01/08/2021 10:38:44 - SeleniumDriver - INFO: Keys has been send with locator: password locatorType: id at Line 100
+01/08/2021 10:38:47 - SeleniumDriver - INFO: Element found with locator: //input[@value='Login'] locatorType: xpath at Line 63
+01/08/2021 10:39:21 - SeleniumDriver - INFO: Element has been clicked with locator: //input[@value='Login'] locatorType: xpath at Line 89
+01/08/2021 10:39:21 - SeleniumDriver - INFO: Element found with locator: //input[@id='search'] locatorType: xpath at Line 63
+01/08/2021 10:39:21 - SeleniumDriver - INFO: Keys has been send with locator: //input[@id='search'] locatorType: XPATH at Line 100
+01/08/2021 10:39:21 - SeleniumDriver - INFO: Element found with locator: //button[@class='find-course search-course'] locatorType: xpath at Line 63
+01/08/2021 10:39:21 - SeleniumDriver - INFO: Element has been clicked with locator: //button[@class='find-course search-course'] locatorType: XPATH at Line 89
+01/08/2021 10:39:21 - SeleniumDriver - INFO: Element found with locator: //h4[contains(text(),'Learn Python 3 from scratch')]//parent::div//parent::a locatorType: xpath at Line 63
+01/08/2021 10:39:53 - SeleniumDriver - INFO: Element has been clicked with locator: //h4[contains(text(),'Learn Python 3 from scratch')]//parent::div//parent::a locatorType: XPATH at Line 89
+01/08/2021 10:39:53 - SeleniumDriver - INFO: Element found with locator: //button[contains(text(),'Enroll in Course')] locatorType: xpath at Line 63
+01/08/2021 10:40:27 - SeleniumDriver - INFO: Element has been clicked with locator: //button[contains(text(),'Enroll in Course')] locatorType: XPATH at Line 89
+01/08/2021 10:40:27 - SeleniumDriver - INFO: Frame has been switched at Line 195
+01/08/2021 10:40:27 - SeleniumDriver - INFO: Element found with locator: cardnumber locatorType: name at Line 63
+01/08/2021 10:40:27 - SeleniumDriver - INFO: Keys has been send with locator: cardnumber locatorType: NAME at Line 100
+01/08/2021 10:40:27 - SeleniumDriver - INFO: Switched to default at Line 203
+01/08/2021 10:40:27 - SeleniumDriver - INFO: Frame has been switched at Line 195
+01/08/2021 10:40:27 - SeleniumDriver - INFO: Element found with locator: exp-date locatorType: name at Line 63
+01/08/2021 10:40:27 - SeleniumDriver - INFO: Keys has been send with locator: exp-date locatorType: NAME at Line 100
+01/08/2021 10:40:27 - SeleniumDriver - INFO: Switched to default at Line 203
+01/08/2021 10:40:27 - SeleniumDriver - INFO: Frame has been switched at Line 195
+01/08/2021 10:40:27 - SeleniumDriver - INFO: Element found with locator: cvc locatorType: name at Line 63
+01/08/2021 10:40:27 - SeleniumDriver - INFO: Keys has been send with locator: cvc locatorType: NAME at Line 100
+01/08/2021 10:40:27 - SeleniumDriver - INFO: Switched to default at Line 203
+01/08/2021 10:40:27 - SeleniumDriver - INFO: Elements found with locator: //div[@class='stripe-outer ']//button locatorType: xpath at Line 76
+01/08/2021 10:40:27 - SeleniumDriver - INFO: Element has been clicked with locator:  locatorType: id at Line 89
+01/08/2021 10:40:31 - SeleniumDriver - INFO: Element found with locator: //span[contains(text(),'El número de tu tarjeta')] locatorType: xpath at Line 63
+01/08/2021 10:40:31 - SeleniumDriver - INFO: Element is displayed with locator: //span[contains(text(),'El número de tu tarjeta')] locatorType: XPATH at Line 174
+01/08/2021 10:40:31 - TestStatus - INFO: ### VERIFICATION SUCCESSFUL :: + Enroll verification at Line 17
+01/08/2021 10:40:31 - TestStatus - INFO: test_invalidEnroll ### TEST SUCCESSFUL at Line 42
+01/08/2021 11:07:23 - SeleniumDriver - INFO: Element found with locator: //a[contains(text(),'Sign In')] locatorType: xpath at Line 63
+01/08/2021 11:07:24 - SeleniumDriver - INFO: Element has been clicked with locator: //a[contains(text(),'Sign In')] locatorType: XPATH at Line 89
+01/08/2021 11:07:24 - SeleniumDriver - INFO: Element found with locator: email locatorType: id at Line 63
+01/08/2021 11:07:24 - SeleniumDriver - INFO: Keys has been send with locator: email locatorType: id at Line 100
+01/08/2021 11:07:24 - SeleniumDriver - INFO: Element found with locator: password locatorType: id at Line 63
+01/08/2021 11:07:24 - SeleniumDriver - INFO: Keys has been send with locator: password locatorType: id at Line 100
+01/08/2021 11:07:27 - SeleniumDriver - INFO: Element found with locator: //input[@value='Login'] locatorType: xpath at Line 63
+01/08/2021 11:08:01 - SeleniumDriver - INFO: Element has been clicked with locator: //input[@value='Login'] locatorType: xpath at Line 89
+01/08/2021 11:08:01 - SeleniumDriver - INFO: Element found with locator: //input[@id='search'] locatorType: xpath at Line 63
+01/08/2021 11:08:01 - SeleniumDriver - INFO: Keys has been send with locator: //input[@id='search'] locatorType: XPATH at Line 100
+01/08/2021 11:08:01 - SeleniumDriver - INFO: Element found with locator: //button[@class='find-course search-course'] locatorType: xpath at Line 63
+01/08/2021 11:08:01 - SeleniumDriver - INFO: Element has been clicked with locator: //button[@class='find-course search-course'] locatorType: XPATH at Line 89
+01/08/2021 11:08:02 - SeleniumDriver - INFO: Element found with locator: //h4[contains(text(),'Learn Python 3 from scratch')]//parent::div//parent::a locatorType: xpath at Line 63
+01/08/2021 11:08:34 - SeleniumDriver - INFO: Element has been clicked with locator: //h4[contains(text(),'Learn Python 3 from scratch')]//parent::div//parent::a locatorType: XPATH at Line 89
+01/08/2021 11:08:34 - SeleniumDriver - INFO: Element found with locator: //button[contains(text(),'Enroll in Course')] locatorType: xpath at Line 63
+01/08/2021 11:09:24 - SeleniumDriver - INFO: Element has been clicked with locator: //button[contains(text(),'Enroll in Course')] locatorType: XPATH at Line 89
+01/08/2021 11:09:24 - SeleniumDriver - INFO: Frame has been switched at Line 195
+01/08/2021 11:09:24 - SeleniumDriver - INFO: Element found with locator: cardnumber locatorType: name at Line 63
+01/08/2021 11:09:24 - SeleniumDriver - INFO: Keys has been send with locator: cardnumber locatorType: NAME at Line 100
+01/08/2021 11:09:24 - SeleniumDriver - INFO: Switched to default at Line 203
+01/08/2021 11:09:24 - SeleniumDriver - INFO: Frame has been switched at Line 195
+01/08/2021 11:09:24 - SeleniumDriver - INFO: Element found with locator: exp-date locatorType: name at Line 63
+01/08/2021 11:09:24 - SeleniumDriver - INFO: Keys has been send with locator: exp-date locatorType: NAME at Line 100
+01/08/2021 11:09:24 - SeleniumDriver - INFO: Switched to default at Line 203
+01/08/2021 11:09:24 - SeleniumDriver - INFO: Frame has been switched at Line 195
+01/08/2021 11:09:24 - SeleniumDriver - INFO: Element found with locator: cvc locatorType: name at Line 63
+01/08/2021 11:09:24 - SeleniumDriver - INFO: Keys has been send with locator: cvc locatorType: NAME at Line 100
+01/08/2021 11:09:24 - SeleniumDriver - INFO: Switched to default at Line 203
+01/08/2021 11:09:24 - SeleniumDriver - INFO: Elements found with locator: //div[@class='stripe-outer ']//button locatorType: xpath at Line 76
+01/08/2021 11:09:24 - SeleniumDriver - INFO: Element has been clicked with locator:  locatorType: id at Line 89
+01/08/2021 11:09:28 - SeleniumDriver - INFO: Element found with locator: //span[contains(text(),'El número de tu tarjeta')] locatorType: xpath at Line 63
+01/08/2021 11:09:28 - SeleniumDriver - INFO: Element is displayed with locator: //span[contains(text(),'El número de tu tarjeta')] locatorType: XPATH at Line 174
+01/08/2021 11:09:28 - TestStatus - INFO: ### VERIFICATION SUCCESSFUL :: + Enroll verification at Line 17
+01/08/2021 11:09:28 - TestStatus - INFO: test_invalidEnroll ### TEST SUCCESSFUL at Line 42
+01/08/2021 11:10:02 - SeleniumDriver - INFO: Element found with locator: //input[@id='search'] locatorType: xpath at Line 63
+01/08/2021 11:10:02 - SeleniumDriver - INFO: Keys has been send with locator: //input[@id='search'] locatorType: XPATH at Line 100
+01/08/2021 11:10:02 - SeleniumDriver - INFO: Element found with locator: //button[@class='find-course search-course'] locatorType: xpath at Line 63
+01/08/2021 11:10:02 - SeleniumDriver - INFO: Element has been clicked with locator: //button[@class='find-course search-course'] locatorType: XPATH at Line 89
+01/08/2021 11:10:02 - SeleniumDriver - INFO: Element found with locator: //h4[contains(text(),'JavaScript for beginners')]//parent::div//parent::a locatorType: xpath at Line 63
+01/08/2021 11:10:05 - SeleniumDriver - INFO: Element has been clicked with locator: //h4[contains(text(),'JavaScript for beginners')]//parent::div//parent::a locatorType: XPATH at Line 89
+01/08/2021 11:10:05 - SeleniumDriver - INFO: Element found with locator: //button[contains(text(),'Enroll in Course')] locatorType: xpath at Line 63
+01/08/2021 11:10:11 - SeleniumDriver - INFO: Element has been clicked with locator: //button[contains(text(),'Enroll in Course')] locatorType: XPATH at Line 89
+01/08/2021 11:10:11 - SeleniumDriver - INFO: Frame has been switched at Line 195
+01/08/2021 11:10:11 - SeleniumDriver - INFO: Element found with locator: cardnumber locatorType: name at Line 63
+01/08/2021 11:10:11 - SeleniumDriver - INFO: Keys has been send with locator: cardnumber locatorType: NAME at Line 100
+01/08/2021 11:10:11 - SeleniumDriver - INFO: Switched to default at Line 203
+01/08/2021 11:10:11 - SeleniumDriver - INFO: Frame has been switched at Line 195
+01/08/2021 11:10:11 - SeleniumDriver - INFO: Element found with locator: exp-date locatorType: name at Line 63
+01/08/2021 11:10:11 - SeleniumDriver - INFO: Keys has been send with locator: exp-date locatorType: NAME at Line 100
+01/08/2021 11:10:11 - SeleniumDriver - INFO: Switched to default at Line 203
+01/08/2021 11:10:11 - SeleniumDriver - INFO: Frame has been switched at Line 195
+01/08/2021 11:10:11 - SeleniumDriver - INFO: Element found with locator: cvc locatorType: name at Line 63
+01/08/2021 11:10:11 - SeleniumDriver - INFO: Keys has been send with locator: cvc locatorType: NAME at Line 100
+01/08/2021 11:10:11 - SeleniumDriver - INFO: Switched to default at Line 203
+01/08/2021 11:10:11 - SeleniumDriver - INFO: Elements found with locator: //div[@class='stripe-outer ']//button locatorType: xpath at Line 76
+01/08/2021 11:10:11 - SeleniumDriver - INFO: Element has been clicked with locator:  locatorType: id at Line 89
+01/08/2021 11:10:15 - SeleniumDriver - INFO: Element found with locator: //span[contains(text(),'El número de tu tarjeta')] locatorType: xpath at Line 63
+01/08/2021 11:10:15 - SeleniumDriver - INFO: Element is displayed with locator: //span[contains(text(),'El número de tu tarjeta')] locatorType: XPATH at Line 174
+01/08/2021 11:10:15 - TestStatus - INFO: ### VERIFICATION SUCCESSFUL :: + Enroll verification at Line 17
+01/08/2021 11:10:15 - TestStatus - INFO: test_invalidEnroll ### TEST SUCCESSFUL at Line 42

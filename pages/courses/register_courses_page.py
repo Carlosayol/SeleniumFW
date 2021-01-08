@@ -23,7 +23,7 @@ class RegisterCoursesPage(BasePage):
 
     _search_field = "//input[@id='search']"  # id
     _search_button = "//button[@class='find-course search-course']"  # xpath
-    _course_link = "//h4[contains(text(),'Learn Python 3 from scratch')]//parent::div//parent::a"  # xpath
+    _course_link = "//h4[contains(text(),'{0}')]//parent::div//parent::a"  # xpath
     _enroll_link = "//button[contains(text(),'Enroll in Course')]"  # xpath
     _creditcard_field = "cardnumber"  # name inside frame 1
     _expdate_field = "exp-date"  # name inside frame
@@ -41,8 +41,8 @@ class RegisterCoursesPage(BasePage):
 
     # Selecting which course to enroll
 
-    def selectCourseToEnroll(self):
-        self.elementClick(self._course_link, locatorType="XPATH")
+    def selectCourseToEnroll(self,course):
+        self.elementClick(self._course_link.format(course), locatorType="XPATH")
 
     # Enroll inside course page
 
@@ -82,7 +82,7 @@ class RegisterCoursesPage(BasePage):
     def enrollCourse(self, coursename="Learn Python 3 from scratch", num="", exp="", cvc=""):
         self.enterCourseName(coursename)
         self.clickSearchCourse()
-        self.selectCourseToEnroll()
+        self.selectCourseToEnroll(coursename)
         self.clickEnrollButton()
         self.scrollBroswer(direction="down")
         self.enterCreditCardInfo(num, exp, cvc)
